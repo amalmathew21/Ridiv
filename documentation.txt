@@ -11,9 +11,9 @@ To access the API, you need to include an Authorization header with a valid toke
 
  endpoints : {
             /invoices/
-            /invoices/<int:pk>
-            invoice-details/
-            /invoice-details/<int:pk>
+            /invoices/<int:pk>/
+            /invoice-details/
+            /invoice-details/<int:pk>/
  }
 
 
