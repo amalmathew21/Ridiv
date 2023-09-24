@@ -1,0 +1,46 @@
+Url:  http://127.0.0.1:8000/api/{endpoints}/
+
+ endpoints : {
+            /invoices/
+            /invoices/<int:pk>/
+ }
+
+. Retrieve a List of Invoices (GET)
+   Endpoint: GET /api/invoices/
+   Url:  http://127.0.0.1:8000/api/invoices/
+   Description: Retrieve a list of all invoices.
+
+2. Retrieve Invoice Details (GET)
+   Endpoint: GET api/invoices/{id}/
+   Url:  http://127.0.0.1:8000/api/invoices/{invoice:id}/
+   Description: Retrieve details of a specific invoice by ID.
+
+3. Create a New Invoice (POST)
+   Endpoint: POST api/invoices/
+   Url:  http://127.0.0.1:8000/api/invoices/
+   Description: Create a new invoice.
+
+   Request Body Format:
+   {
+       "date": "YYYY-MM-DD",
+       "customer_name": "Customer Name",
+       ...
+   }
+
+4. Update an Existing Invoice (PUT)
+   Endpoint: PUT api/invoices/{id}/
+   Url:  http://127.0.0.1:8000/api/invoices/{invoice:id}/
+   Description: Update an existing invoice by ID.
+
+   Request Body Format:
+   {
+       "date": "YYYY-MM-DD",
+       "customer_name": "Updated Customer Name",
+       ...
+   }
+
+5. Delete an Invoice (DELETE)
+   Endpoint: DELETE api/invoices/{id}/
+   Url:  http://127.0.0.1:8000/api/invoices/{invoice:id}/
+   Description: Delete an invoice by ID.
+

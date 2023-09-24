@@ -2,7 +2,7 @@ MyApp API
 
 This API allows you to interact with our system's invoices and invoice details.
 
-Base URL: http://example.com/api/
+
 
 Authentication:
 To access the API, you need to include an Authorization header with a valid token.
@@ -10,8 +10,8 @@ To access the API, you need to include an Authorization header with a valid toke
  Url:  http://127.0.0.1:8000/api/{endpoints}/
 
  endpoints : {
-            /invoices/
-            /invoices/<int:pk>/
+            /invoiceslist/
+            /invoiceslist/<int:pk>/
             /invoice-details/
             /invoice-details/<int:pk>/
  }
@@ -20,17 +20,17 @@ To access the API, you need to include an Authorization header with a valid toke
 
 
 1. Retrieve a List of Invoices (GET)
-   Endpoint: GET /apiinvoices/
+   Endpoint: GET /api/invoiceslist/
    Url:  http://127.0.0.1:8000/api/invoices/
    Description: Retrieve a list of all invoices.
 
 2. Retrieve Invoice Details (GET)
-   Endpoint: GET api/invoices/{id}/
+   Endpoint: GET api/invoiceslist/{id}/
    Url:  http://127.0.0.1:8000/api/invoices/{invoice:id}/
    Description: Retrieve details of a specific invoice by ID.
 
 3. Create a New Invoice (POST)
-   Endpoint: POST api/invoices/
+   Endpoint: POST api/invoiceslist/
    Url:  http://127.0.0.1:8000/api/invoices/
    Description: Create a new invoice.
 
@@ -42,7 +42,7 @@ To access the API, you need to include an Authorization header with a valid toke
    }
 
 4. Update an Existing Invoice (PUT)
-   Endpoint: PUT api/invoices/{id}/
+   Endpoint: PUT api/invoiceslist/{id}/
    Url:  http://127.0.0.1:8000/api/invoices/{invoice:id}/
    Description: Update an existing invoice by ID.
 
@@ -54,7 +54,7 @@ To access the API, you need to include an Authorization header with a valid toke
    }
 
 5. Delete an Invoice (DELETE)
-   Endpoint: DELETE api/invoices/{id}/
+   Endpoint: DELETE api/invoiceslist/{id}/
    Url:  http://127.0.0.1:8000/api/invoices/{invoice:id}/
    Description: Delete an invoice by ID.
 
