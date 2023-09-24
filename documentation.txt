@@ -1,0 +1,134 @@
+MyApp API
+
+This API allows you to interact with our system's invoices and invoice details.
+
+Base URL: http://example.com/api/
+
+Authentication:
+To access the API, you need to include an Authorization header with a valid token.
+
+ Url:  http://127.0.0.1:8000/api/{endpoints}/
+
+ endpoints : {
+            /invoices/
+            /invoices/<int:pk>
+            invoice-details/
+            /invoice-details/<int:pk>
+ }
+
+
+
+
+1. Retrieve a List of Invoices (GET)
+   Endpoint: GET /apiinvoices/
+   Url:  http://127.0.0.1:8000/api/invoices/
+   Description: Retrieve a list of all invoices.
+
+2. Retrieve Invoice Details (GET)
+   Endpoint: GET api/invoices/{id}/
+   Url:  http://127.0.0.1:8000/api/invoices/{invoice:id}/
+   Description: Retrieve details of a specific invoice by ID.
+
+3. Create a New Invoice (POST)
+   Endpoint: POST api/invoices/
+   Url:  http://127.0.0.1:8000/api/invoices/
+   Description: Create a new invoice.
+
+   Request Body Format:
+   {
+       "date": "YYYY-MM-DD",
+       "customer_name": "Customer Name",
+       ...
+   }
+
+4. Update an Existing Invoice (PUT)
+   Endpoint: PUT api/invoices/{id}/
+   Url:  http://127.0.0.1:8000/api/invoices/{invoice:id}/
+   Description: Update an existing invoice by ID.
+
+   Request Body Format:
+   {
+       "date": "YYYY-MM-DD",
+       "customer_name": "Updated Customer Name",
+       ...
+   }
+
+5. Delete an Invoice (DELETE)
+   Endpoint: DELETE api/invoices/{id}/
+   Url:  http://127.0.0.1:8000/api/invoices/{invoice:id}/
+   Description: Delete an invoice by ID.
+
+
+
+6. Retrieve a List of Invoice Details (GET)
+   Endpoint: GET api/invoice-details/
+   Url:  http://127.0.0.1:8000/api/invoice-details/
+   Description: Retrieve a list of all invoice details.
+
+7. Retrieve Invoice Detail (GET)
+   Endpoint: GET  api/invoice-details/{id}/
+   Url:  http://127.0.0.1:8000/api/invoice-details/{invoice:id}/
+   Description: Retrieve details of a specific invoice detail by ID.
+
+8. Create a New Invoice Detail (POST)
+   Endpoint: POST api/invoice-details/
+   Url:  http://127.0.0.1:8000/api/invoice-details/
+   Description: Create a new invoice detail.
+
+   Request Body Format:
+   {
+       "invoice": 1,
+       "description": "Product Description",
+       "quantity": 5,
+       "unit_price": 10.0,
+       "price": 50.0,
+       ...
+   }
+
+9. Update an Existing Invoice Detail (PUT)
+   Endpoint: api/invoice-details/{id}/
+   Url:  http://127.0.0.1:8000/api/invoice-details/{invoice:id}/
+   Description: Update an existing invoice detail by ID.
+
+   Request Body Format:
+   {
+       "description": "Updated Product Description",
+       ...
+   }
+
+10. Delete an Invoice Detail (DELETE)
+    Endpoint : api/invoice-details/{invoice:id}/
+    Url:  http://127.0.0.1:8000/api/invoice-details/{invoice:id}/
+    Description: Delete an invoice detail by ID.
+
+---
+
+Example Request:
+----------------
+Method: GET
+URL:  http://127.0.0.1:8000/api/invoices/
+Headers: GET/POST/PUT/PATCH/DELETE
+
+Example Response:
+-----------------
+Status Code: 200 OK
+Body: [
+    {
+        "id": 1,
+        "date": "2023-09-30",
+        "customer_name": "Jio Company",
+        ...
+    },
+    {
+        "id": 2,
+        "date": "2023-10-05",
+        "customer_name": "ABC Corporation",
+        ...
+    },
+    ...
+]
+
+---
+
+This concludes the MyApp API tutorial.
+
